@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   DropTraQ design tokens: light theme.
+   The "ink" scale names surfaces by role (ink-900 = page,
+   ink-850 = raised card, ink-950 = recessed band, ink-800/700 =
+   insets and selected states). Accent cyan is deepened so it
+   passes text contrast on white; the electric brand cyan
+   (#24c8d8) is kept for decorative glows and live indicators.
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  --color-ink-950: #edf2f6;
+  --color-ink-900: #f8fafc;
+  --color-ink-850: #ffffff;
+  --color-ink-800: #f1f5f9;
+  --color-ink-700: #e4ecf2;
+  --color-ink-600: #cfdbe5;
+  --color-line: #dfe7ee;
+  --color-line-strong: #c6d4df;
+
+  --color-cyan: #0a8394;
+  --color-cyan-soft: #06697a;
+  --color-cyan-bright: #24c8d8;
+  --color-water: #1f78c4;
+  --color-brand: #169df7;
+  --color-amber: #b86e0a;
+  --color-alert: #cf3e2e;
+  --color-ok: #17875a;
+
+  --color-night: #071521;
+  --color-fg: #0b1d2b;
+  --color-muted: #475a69;
+  --color-subtle: #66798a;
+
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --animate-pulse-ring: pulse-ring 2.4s var(--ease-out-quart) infinite;
+  --animate-dash: dash-flow 1.6s linear infinite;
+  --animate-blink: blink 1.6s ease-in-out infinite;
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.6); opacity: 0.7; }
+    80%, 100% { transform: scale(2.2); opacity: 0; }
+  }
+  @keyframes dash-flow {
+    to { stroke-dashoffset: -24; }
+  }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.35; }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-ink-900);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: color-mix(in oklab, var(--color-cyan-bright) 30%, transparent); }
+  :focus-visible {
+    outline: 2px solid var(--color-cyan);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  [id] { scroll-margin-top: 96px; }
+}
+
+@layer components {
+  /* Thin technical grid, faded toward the edges */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, color-mix(in oklab, var(--color-line) 70%, transparent) 1px, transparent 1px),
+      linear-gradient(to bottom, color-mix(in oklab, var(--color-line) 70%, transparent) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 85%);
+  }
+  .bg-dots {
+    background-image: radial-gradient(color-mix(in oklab, var(--color-line-strong) 80%, transparent) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-cyan);
+  }
+  .hairline { border-color: var(--color-line); }
+  .glow-cyan { box-shadow: 0 0 0 1px color-mix(in oklab, var(--color-cyan) 35%, transparent), 0 10px 30px -12px color-mix(in oklab, var(--color-cyan-bright) 55%, transparent); }
+  .text-gradient {
+    background: linear-gradient(100deg, var(--color-fg) 10%, var(--color-cyan) 55%, var(--color-water) 95%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .photo-tint { position: relative; isolation: isolate; }
+  .photo-tint::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 55%, color-mix(in oklab, var(--color-ink-900) 85%, transparent));
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
