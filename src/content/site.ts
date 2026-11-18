@@ -77,8 +77,8 @@ export type TeamMember = {
  * Do not assign faces from group photos without confirmation.
  */
 export const team: TeamMember[] = [
-  { published: true, name: "Success Ituma", role: "Co-founder & CEO", bio: null, photo: null, linkedin: null },
-  { published: true, name: "Henriette Iraguha", role: "Co-founder & COO", bio: null, photo: null, linkedin: null },
+  { published: true, name: "Success Ituma", role: "Co-founder & CEO", bio: null, photo: "/images/team/success_ituma.jpg", linkedin: null },
+  { published: true, name: "Henriette Iraguha", role: "Co-founder & COO", bio: null, photo: "/images/team/henriette_iraguha.jpg", linkedin: null },
   { published: true, name: "Jude Baba", role: "Technical Team", bio: null, photo: null, linkedin: null },
   { published: true, name: "Karangwa Muhoza Beni Bonheur", role: "Technical Team", bio: null, photo: null, linkedin: null },
 ];
@@ -103,7 +103,7 @@ export const photos = {
     alt: "Two DropTraQ team members reviewing design notes in a notebook",
   },
   teamInnovationHub: {
-    src: "/images/team/team-kigali-innovation-hub.jpg",
+    src: "/images/field/field-visit-filtration-walkway.jpg",
     width: 1650, height: 2200,
     alt: "Four DropTraQ team members standing outside an innovation hub in Kigali",
   },
