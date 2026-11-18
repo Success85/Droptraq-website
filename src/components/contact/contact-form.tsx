@@ -209,7 +209,7 @@ export function ContactForm({ initialType = "" }: { initialType?: ContactInput["
           <p className="mt-2 text-sm leading-relaxed text-muted">{state.message}</p>
           {site.contact.phones.length > 0 && (
             <p className="mt-2 text-sm leading-relaxed text-muted">
-              You can also call us on{" "}
+              You can also call or reach out to us on{" "}
               {site.contact.phones.map((p, i) => (
                 <span key={p.tel}>
                   {i > 0 && " or "}
