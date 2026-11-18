@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { Building2, Cpu, MessageSquare, Users } from "lucide-react";
+import { Building2, Cpu, MessageSquare, Phone, Users } from "lucide-react";
 import { ContactForm, ContactFormWithParams } from "@/components/contact/contact-form";
 import { Container, Section } from "@/components/ui/container";
 import { PageHero } from "@/components/ui/page-hero";
@@ -46,6 +46,16 @@ export default function ContactPage() {
             <div className="mt-6 rounded-2xl border border-line p-5 text-sm text-muted">
               <p className="font-mono text-[11px] uppercase tracking-wider text-subtle">Based in</p>
               <p className="mt-2 text-fg">{site.location}</p>
+              <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-subtle">Phone</p>
+              <ul className="mt-2 space-y-1.5">
+                {site.contact.phones.map((p) => (
+                  <li key={p.tel}>
+                    <a href={`tel:${p.tel}`} className="inline-flex items-center gap-2 text-fg hover:text-cyan">
+                      <Phone aria-hidden className="size-4 text-cyan" /> {p.display}
+                    </a>
+                  </li>
+                ))}
+              </ul>
               {site.contact.email && (
                 <>
                   <p className="mt-4 font-mono text-[11px] uppercase tracking-wider text-subtle">Email</p>

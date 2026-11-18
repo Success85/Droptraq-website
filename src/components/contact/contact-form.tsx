@@ -93,7 +93,7 @@ export function ContactForm({ initialType = "" }: { initialType?: ContactInput["
         <CheckCircle2 aria-hidden className="size-8 text-ok" />
         <h2 className="mt-5 font-display text-2xl text-fg">Message sent. Thank you.</h2>
         <p className="mt-3 leading-relaxed text-muted">
-          Your message has been delivered to the DropTraQ team. We will reply to <span className="text-fg">{values.email}</span>.
+          We have received your message and the DropTraQ team will reply to <span className="text-fg">{values.email}</span>.
         </p>
         <button type="button" onClick={() => { setValues({ ...empty }); setTouched({}); setErrors({}); setState({ kind: "idle" }); }}
           className="mt-8 min-h-10 rounded-full border border-line-strong px-5 text-sm text-fg hover:border-cyan">
@@ -207,6 +207,18 @@ export function ContactForm({ initialType = "" }: { initialType?: ContactInput["
         <div ref={statusRef} tabIndex={-1} role="alert" className="rounded-xl border border-amber/40 bg-amber/5 p-5 outline-none">
           <p className="flex items-start gap-2 font-medium text-fg"><AlertCircle aria-hidden className="mt-0.5 size-5 shrink-0 text-amber" />Your message has not been sent.</p>
           <p className="mt-2 text-sm leading-relaxed text-muted">{state.message}</p>
+          {site.contact.phones.length > 0 && (
+            <p className="mt-2 text-sm leading-relaxed text-muted">
+              You can also call us on{" "}
+              {site.contact.phones.map((p, i) => (
+                <span key={p.tel}>
+                  {i > 0 && " or "}
+                  <a href={`tel:${p.tel}`} className="whitespace-nowrap font-medium text-fg underline-offset-2 hover:underline">{p.display}</a>
+                </span>
+              ))}
+              .
+            </p>
+          )}
           <div className="mt-4 flex flex-wrap gap-2">
             {site.contact.email && (
               <a className="inline-flex min-h-10 items-center rounded-full bg-cyan px-4 text-sm font-medium text-white"

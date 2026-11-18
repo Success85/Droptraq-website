@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { nav, site } from "@/content/site";
 import { Logo } from "@/components/ui/logo";
 import { Container } from "@/components/ui/container";
@@ -47,6 +47,13 @@ export function SiteFooter() {
                 </a>
               </li>
             )}
+            {site.contact.phones.map((p) => (
+              <li key={p.tel}>
+                <a href={`tel:${p.tel}`} className="inline-flex items-center gap-2 text-muted hover:text-fg">
+                  <Phone aria-hidden className="size-4" /> {p.display}
+                </a>
+              </li>
+            ))}
             <li><Link href="/contact" className="text-muted hover:text-fg">Send us a message →</Link></li>
             <li><Link href="/contact?type=talent" className="text-muted hover:text-fg">Engineering talent →</Link></li>
           </ul>

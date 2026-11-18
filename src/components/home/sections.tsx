@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { StatusBadge } from "@/components/ui/status-badge";
 import { TeamProfiles } from "@/components/about/team-profiles";
+import { Milestones } from "@/components/ui/milestones";
 import { photos } from "@/content/site";
 import { disciplines } from "@/content/technology";
 
@@ -116,6 +117,26 @@ export function ProductPreview() {
   );
 }
 
+/* ───────── Traction ───────── */
+export function TractionSection() {
+  return (
+    <Section labelledBy="traction-title" className="border-t border-line">
+      <Container>
+        <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+          <SectionHeading
+            id="traction-title"
+            eyebrow="Progress so far"
+            title="Early, and moving."
+            intro={<p>What we have done so far: field research, a working data path, prize funding and a growing team.</p>}
+          />
+          <ButtonLink href="/insights" variant="secondary" arrow className="shrink-0 self-start lg:self-auto">News &amp; milestones</ButtonLink>
+        </div>
+        <Milestones className="mt-12" />
+      </Container>
+    </Section>
+  );
+}
+
 /* ───────── Team ───────── */
 export function TeamSection() {
   return (
@@ -140,7 +161,9 @@ export function TeamSection() {
           </div>
         </div>
 
-        <div className="mt-14 grid gap-4 md:grid-cols-12 md:grid-rows-2">
+        <TeamProfiles className="mt-12" />
+
+        <div className="mt-4 grid gap-4 md:grid-cols-12 md:grid-rows-2">
           <Reveal className="md:col-span-7 md:row-span-2">
             <Photo photo={photos.teamWorkingSession} sizes="(min-width:768px) 700px, 100vw" className="aspect-[4/3] h-full md:aspect-auto"
               caption="Working session · firmware & dashboard" position="30% center" />
@@ -155,7 +178,6 @@ export function TeamSection() {
           </Reveal>
         </div>
 
-        <TeamProfiles className="mt-16" />
       </Container>
     </Section>
   );

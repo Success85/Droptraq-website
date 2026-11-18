@@ -128,8 +128,10 @@ export function ProblemCards() {
             title="Water Loss Is Also a Visibility Problem."
             intro={
               <p>
-                Non-revenue water is not only about meters. It is also about the missing link between what happens in
-                the pipes and what operators can see, and how quickly they can see it.
+                In Rwanda, non-revenue water stood at 39.5% in 2024, against a national target of 25%.{" "}
+                <a href="/problem#rwanda" className="text-cyan underline-offset-2 hover:underline">See the sources</a>.
+                It is not only about meters. It is also about the missing link between what happens in the pipes and
+                what operators can see, and how quickly they can see it.
               </p>
             }
           />

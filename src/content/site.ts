@@ -29,8 +29,11 @@ export const site = {
   contact: {
     /** TODO(company): [COMPANY_EMAIL] — public inbox shown in the footer and contact page. */
     email: null as string | null,
-    /** TODO(company): [COMPANY_PHONE] — optional. */
-    phone: null as string | null,
+    /** Public phone numbers. `tel` is the dialable E.164 form. */
+    phones: [
+      { display: "+250 796 592 039", tel: "+250796592039" },
+      { display: "+250 794 772 006", tel: "+250794772006" },
+    ] as { display: string; tel: string }[],
   },
 
   social: {
@@ -68,15 +71,16 @@ export type TeamMember = {
 };
 
 /**
- * TODO(company): Fill in verified team profiles, then set `published: true`.
- * Names, roles and biographies must come from the team — never guessed.
- * Individual portrait photos are not in the shared Drive folder yet.
+ * Team names and roles confirmed by the company.
+ * TODO(company): add a portrait (photo), a one-line bio and a LinkedIn URL
+ * for each person. Without a photo, the card shows the person's initials.
+ * Do not assign faces from group photos without confirmation.
  */
 export const team: TeamMember[] = [
-  { published: false, name: "[TEAM_MEMBER_NAME]", role: "Chief Executive Officer", bio: "[TEAM_MEMBER_BIO]", photo: null, linkedin: null },
-  { published: false, name: "[TEAM_MEMBER_NAME]", role: "Chief Operating Officer", bio: "[TEAM_MEMBER_BIO]", photo: null, linkedin: null },
-  { published: false, name: "[TEAM_MEMBER_NAME]", role: "Chief Technology Officer", bio: "[TEAM_MEMBER_BIO]", photo: null, linkedin: null },
-  { published: false, name: "[TEAM_MEMBER_NAME]", role: "Product Engineering / IoT", bio: "[TEAM_MEMBER_BIO]", photo: null, linkedin: null },
+  { published: true, name: "Success Ituma", role: "Co-founder & CEO", bio: null, photo: null, linkedin: null },
+  { published: true, name: "Henriette Iraguha", role: "Co-founder & COO", bio: null, photo: null, linkedin: null },
+  { published: true, name: "Jude Baba", role: "Technical Team", bio: null, photo: null, linkedin: null },
+  { published: true, name: "Karangwa Muhoza Beni Bonheur", role: "Technical Team", bio: null, photo: null, linkedin: null },
 ];
 
 export const publishedTeam = () => team.filter((m) => m.published);

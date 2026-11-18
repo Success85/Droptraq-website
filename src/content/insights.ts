@@ -2,11 +2,10 @@
  * Insights / editorial content.
  *
  *  status "published"       – real, written by DropTraQ. Gets its own page.
- *  status "in-preparation"  – a planned topic. Shown as "In preparation";
- *                             no body text, no fake date, no fake author.
+ *  status "in-preparation"  – a working draft. Never shown on the site.
  *
  * To publish an article: write the body (paragraph strings), set a real
- * date and author, and change the status to "published".
+ * date, and set status to "published".
  */
 export const topics = [
   "IoT & Infrastructure",
@@ -48,48 +47,6 @@ export const insights: Insight[] = [
       "The session was aimed at builders with backgrounds in IoT, embedded systems, electronics and hardware: people who want to build something meaningful, join an early-stage company, and work on technology with practical impact in Rwanda.",
       "If you missed the session and this describes you, we would still like to hear from you. Get in touch through our contact page and choose “Engineering talent”.",
     ],
-  },
-  {
-    slug: "segment-balance-explained",
-    title: "Why measure both ends of a pipe? Segment balance, explained",
-    summary: "How comparing water sent with water received narrows a loss down to one section of the network.",
-    topic: "Water Distribution",
-    status: "in-preparation",
-  },
-  {
-    slug: "pulse-flow-sensors-on-esp32",
-    title: "From pulses to litres: reading flow sensors on ESP32",
-    summary: "Engineering notes on sampling, calibration and timekeeping for low-cost flow measurement.",
-    topic: "Embedded Systems",
-    status: "in-preparation",
-  },
-  {
-    slug: "mqtt-for-field-telemetry",
-    title: "MQTT for field telemetry: lessons from our prototype",
-    summary: "Why we chose publish/subscribe messaging for constrained devices and unreliable links.",
-    topic: "IoT & Infrastructure",
-    status: "in-preparation",
-  },
-  {
-    slug: "what-is-non-revenue-water",
-    title: "Non-revenue water: a primer for non-engineers",
-    summary: "Real losses, apparent losses and unbilled consumption: what the terms mean and why they matter.",
-    topic: "Water Accountability",
-    status: "in-preparation",
-  },
-  {
-    slug: "designing-for-intermittent-connectivity",
-    title: "Designing infrastructure devices for intermittent connectivity",
-    summary: "Buffering, timestamps and recovery: building devices that do not lose data when the network does.",
-    topic: "African Infrastructure",
-    status: "in-preparation",
-  },
-  {
-    slug: "what-operators-need-from-a-dashboard",
-    title: "What operators actually need from a monitoring dashboard",
-    summary: "Notes on designing interfaces that support decisions rather than just display data.",
-    topic: "Smart Utilities",
-    status: "in-preparation",
   },
 ];
 

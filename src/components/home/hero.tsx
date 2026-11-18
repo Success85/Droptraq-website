@@ -15,7 +15,7 @@ export function Hero() {
           <Reveal>
             <p className="eyebrow flex flex-wrap items-center gap-x-3 gap-y-1">
               <span aria-hidden className="h-px w-8 bg-cyan/60" />
-              IoT · Infrastructure intelligence · Kigali
+              IoT · Water infrastructure intelligence · Rwanda
             </p>
           </Reveal>
           <Reveal delay={0.05}>

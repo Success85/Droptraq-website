@@ -28,7 +28,7 @@ export default function PrivacyPage() {
           </section>
           <section>
             <h2>Service providers</h2>
-            <p>Contact-form messages are delivered to us by email through a third-party email delivery provider, and the website is hosted by a third-party hosting provider. These providers process data on our behalf to run the service.</p>
+            <p>Contact-form messages are stored in a secure database hosted by Supabase, and a copy is sent to our team by email through a third-party email delivery provider. The website itself is hosted by a third-party hosting provider. These providers process data on our behalf to run the service. Stored messages are accessible only to the DropTraQ team.</p>
           </section>
           <section>
             <h2>Cookies and analytics</h2>

@@ -6,12 +6,13 @@ import { PageHero } from "@/components/ui/page-hero";
 import { Photo } from "@/components/ui/photo";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { Cite, RwandaChallenge } from "@/components/problem/rwanda-challenge";
 import { photos } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "The Problem",
   description:
-    "Why water losses are hard to find: how water moves through distribution networks, what non-revenue water means, and why timely, granular data matters.",
+    "Rwanda's non-revenue water challenge, with sources: how water moves through distribution networks, what non-revenue water means, why losses are hard to find, and why timely, granular data matters.",
   alternates: { canonical: "/problem" },
 };
 
@@ -28,18 +29,20 @@ export default function ProblemPage() {
   return (
     <>
       <PageHero
-        eyebrow="The problem"
+        eyebrow="The problem · Rwanda"
         title={<>Water that leaves the plant does not always <span className="text-gradient">arrive.</span></>}
         intro={
           <p>
-            Every distribution network loses some water between treatment and the tap. The hard part is not knowing that
-            losses exist. It is knowing <em className="not-italic text-fg">where</em>, <em className="not-italic text-fg">how much</em> and{" "}
-            <em className="not-italic text-fg">since when</em>.
+            In Rwanda, close to four in every ten litres of treated water do not generate revenue.<Cite ids={["oag2024", "wasacBriefing"]} />{" "}
+            The hard part is not knowing that losses exist. It is knowing <em className="not-italic text-fg">where</em>,{" "}
+            <em className="not-italic text-fg">how much</em> and <em className="not-italic text-fg">since when</em>.
           </p>
         }
       />
 
-      <Section labelledBy="journey-title" className="!pt-0">
+      <RwandaChallenge />
+
+      <Section labelledBy="journey-title" className="border-t border-line">
         <Container>
           <SectionHeading
             id="journey-title"
@@ -120,7 +123,7 @@ export default function ProblemPage() {
               <div className="rounded-xl border border-line bg-ink-850 p-4 text-fg/90">Real (physical) losses <span className="block text-xs text-subtle">leaks and bursts on mains, storage overflows, service-pipe leaks</span></div>
             </div>
           </Reveal>
-          <p className="mt-4 text-xs text-subtle">Simplified from the IWA standard water balance (International Water Association). Terminology only, no figures implied.</p>
+          <p className="mt-4 text-xs text-subtle">Simplified from the IWA standard water balance (International Water Association).<Cite ids={["iwa"]} /> Terminology only, no figures implied.</p>
 
           <div className="mt-16 grid gap-10 md:grid-cols-3">
             {[

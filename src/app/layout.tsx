@@ -46,6 +46,7 @@ const orgJsonLd = {
   description: site.shortDescription,
   address: { "@type": "PostalAddress", addressLocality: "Kigali", addressCountry: "RW" },
   ...(site.contact.email ? { email: site.contact.email } : {}),
+  ...(site.contact.phones.length ? { telephone: site.contact.phones[0].tel } : {}),
   ...(site.social.linkedin ? { sameAs: [site.social.linkedin] } : {}),
 };
 

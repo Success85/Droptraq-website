@@ -3,7 +3,7 @@ import { Hero } from "@/components/home/hero";
 import { Intro } from "@/components/home/intro";
 import { ProblemCards } from "@/components/home/problem-cards";
 import {
-  ApproachSection, ClosingCta, ProductPreview, TeamSection, TechPreview, VisionSection,
+  ApproachSection, ClosingCta, ProductPreview, TeamSection, TechPreview, TractionSection, VisionSection,
 } from "@/components/home/sections";
 
 export const metadata: Metadata = {
@@ -19,6 +19,7 @@ export default function HomePage() {
       <ApproachSection />
       <TechPreview />
       <ProductPreview />
+      <TractionSection />
       <TeamSection />
       <VisionSection />
       <ClosingCta />
