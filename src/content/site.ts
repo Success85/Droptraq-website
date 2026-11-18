@@ -77,8 +77,8 @@ export type TeamMember = {
  * Do not assign faces from group photos without confirmation.
  */
 export const team: TeamMember[] = [
-  { published: true, name: "Success Ituma", role: "Co-founder & CEO", bio: null, photo: "/images/team/success_ituma.jpg", linkedin: null },
-  { published: true, name: "Henriette Iraguha", role: "Co-founder & COO", bio: null, photo: "/images/team/henriette_iraguha.jpg", linkedin: null },
+  { published: true, name: "Success Ituma", role: "Co-founder & CEO", bio: null, photo: "/images/team/success_ituma.jpeg", linkedin: null },
+  { published: true, name: "Henriette Iraguha", role: "Co-founder & COO", bio: null, photo: "/images/team/henriette_iraguha.jpeg", linkedin: null },
   { published: true, name: "Jude Baba", role: "Technical Team", bio: null, photo: null, linkedin: null },
   { published: true, name: "Karangwa Muhoza Beni Bonheur", role: "Technical Team", bio: null, photo: null, linkedin: null },
 ];
